@@ -10,7 +10,7 @@ $(function () {
     range: "min",
     min: 1,
     max: 30,
-    slide: function (event, ui) {
+    change: function (event, ui) {
       $("#days").text(ui.value);
       calculateCostAndSubscription();
     },
@@ -22,7 +22,7 @@ $(function () {
     range: "min",
     min: 1,
     max: 24,
-    slide: function (event, ui) {
+    change: function (event, ui) {
       $("#hrs").text(ui.value);
       calculateCostAndSubscription();
     },
@@ -34,7 +34,7 @@ $(function () {
     range: "min",
     min: 0,
     max: 100,
-    slide: function (event, ui) {
+    change: function (event, ui) {
       $("#OEE").text(ui.value);
       calculateCostAndSubscription();
     },
@@ -46,7 +46,7 @@ $(function () {
     range: "min",
     min: 0,
     max: 100,
-    slide: function (event, ui) {
+    change: function (event, ui) {
       $("#est-OEE").text(ui.value);
       estOEEInitialized = true;
       calculateCostAndSubscription();
