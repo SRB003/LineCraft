@@ -61,7 +61,7 @@ $(function () {
         }
         
         var numberOfMachines = parseInt($("#machines").val(), 10);
-        var oneTimeCost = Math.ceil(numberOfMachines / 20) * 10000;
+        var oneTimeCost = Math.ceil(numberOfMachines / 20) * 50000;
         var yearlySubscription = numberOfMachines * 10000;
         // updated the loop to run till 50 months
         for (var month = 1; month <= 50; month++) {
