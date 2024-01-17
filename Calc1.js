@@ -8,7 +8,7 @@ $(function () {
     $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content").slider({
         range: "min",
         min: 1,
-        max: 30,
+        max: 31,
         change: function (event, ui) {
             $("#days").text(ui.value);
             calculateCostAndSubscription();
@@ -27,7 +27,7 @@ $(function () {
 
     $("#w-node-ff05e759-9986-1567-b119-a92609867deb-4360c73e .ui-widget-content").slider({
         range: "min",
-        min: 0,
+        min: 1,
         max: 100,
         change: function (event, ui) {
             $("#OEE").text(ui.value);
@@ -37,8 +37,8 @@ $(function () {
 
     $("#w-node-_0175c10d-b0b6-597e-04e5-d065d3ca367f-4360c73e .ui-widget-content").slider({
         range: "min",
-        min: 0,
-        max: 100,
+        min: 1,
+        max: 50,
         change: function (event, ui) {
             $("#est-OEE").text(ui.value);
           
