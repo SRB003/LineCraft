@@ -59,7 +59,30 @@ $(function () {
       
         location.reload();
     });
-
+$(document).ready(function () {
+        $("#machines").on("input", function () {
+            var value = $(this).val();
+            if (value < 1 || value > 1000) {
+              
+                alert("Please enter a value between 1 - 1000 for the number of machines.");
+                value = Math.min(Math.max(value, 1), 1000);
+                $(this).val(value);
+            }
+            calculateCostAndSubscription();
+        });
+    });
+    $(document).ready(function () {
+        $("#machine-cost").on("input", function () {
+            var value = $(this).val();
+            if (value < 1 || value > 5000) {
+                
+                alert("Please enter a value between $1 - $5000 for the number of machines.");
+                value = Math.min(Math.max(value, 1), 5000);
+                $(this).val(value);
+            }
+            calculateCostAndSubscription();
+        });
+    });
     function calculateBreakevenDays(month, cumulativeCashFlow, previousCumulativeCashFlow) {
         if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
             // Corrected breakeven day calculation
