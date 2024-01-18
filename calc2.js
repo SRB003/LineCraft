@@ -56,7 +56,7 @@ $(function () {
 $(document).ready(function () {
   $("#turnover").on("input", function () {
       var value = $(this).val();
-      if (value < 1000000 || value > 500000000) {
+      if (value < 0 || value > 500000000) {
           // If the entered value is outside the range, show a message and set it to the nearest limit
           alert("Please enter a value between $1000000 - $500000000 for the number of machines.");
         //  value = Math.min(Math.max(value, 1000000 ),  500000000);
