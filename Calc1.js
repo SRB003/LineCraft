@@ -6,7 +6,7 @@ $(function () {
     var previousMonthcost = 0;
 
     $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content").slider({
-         value :"25",
+        value :25,
         range: "min",
         min: 1,
         max: 31,
