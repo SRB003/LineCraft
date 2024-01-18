@@ -6,10 +6,11 @@ $(function () {
     var previousMonthcost = 0;
 
     $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content").slider({
-        value :25,
+        value :"25",
         range: "min",
         min: 1,
-        max: 31,
+        max: 30,
+       
         change: function (event, ui) {
             $("#days").text(ui.value);
             calculateCostAndSubscription();
@@ -17,7 +18,7 @@ $(function () {
     });
 
     $("#w-node-_09480e99-58d2-0fb9-83f3-76b815703657-4360c73e .ui-widget-content").slider({
-         value :"16",
+        value :"16",
         range: "min",
         min: 1,
         max: 24,
@@ -28,9 +29,9 @@ $(function () {
     });
 
     $("#w-node-ff05e759-9986-1567-b119-a92609867deb-4360c73e .ui-widget-content").slider({
-         value :"60",
+        value :"60",
         range: "min",
-        min: 1,
+        min: 0,
         max: 100,
         change: function (event, ui) {
             $("#OEE").text(ui.value);
@@ -39,10 +40,10 @@ $(function () {
     });
 
     $("#w-node-_0175c10d-b0b6-597e-04e5-d065d3ca367f-4360c73e .ui-widget-content").slider({
-         value :"10",
+        value :"10",
         range: "min",
-        min: 1,
-        max: 50,
+        min: 0,
+        max: 100,
         change: function (event, ui) {
             $("#est-OEE").text(ui.value);
           
@@ -63,11 +64,11 @@ $(function () {
       
         location.reload();
     });
-$(document).ready(function () {
+    $(document).ready(function () {
         $("#machines").on("input", function () {
             var value = $(this).val();
             if (value < 1 || value > 1000) {
-              
+                // If the entered value is outside the range, show a message and set it to the nearest limit
                 alert("Please enter a value between 1 - 1000 for the number of machines.");
                 value = Math.min(Math.max(value, 1), 1000);
                 $(this).val(value);
@@ -79,7 +80,7 @@ $(document).ready(function () {
         $("#machine-cost").on("input", function () {
             var value = $(this).val();
             if (value < 1 || value > 5000) {
-                
+                // If the entered value is outside the range, show a message and set it to the nearest limit
                 alert("Please enter a value between $1 - $5000 for the number of machines.");
                 value = Math.min(Math.max(value, 1), 5000);
                 $(this).val(value);
@@ -213,6 +214,7 @@ $(document).ready(function () {
         var hrs = $("#hrs").text();
         var OEE = $("#OEE").text();
         var estOEE = $("#est-OEE").text();
+    
 
         return numberOfMachines && machineCost && days && hrs && OEE && estOEE;
     }
