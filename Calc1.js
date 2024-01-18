@@ -6,6 +6,7 @@ $(function () {
     var previousMonthcost = 0;
 
     $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content").slider({
+         value :"25",
         range: "min",
         min: 1,
         max: 31,
@@ -16,6 +17,7 @@ $(function () {
     });
 
     $("#w-node-_09480e99-58d2-0fb9-83f3-76b815703657-4360c73e .ui-widget-content").slider({
+         value :"16",
         range: "min",
         min: 1,
         max: 24,
@@ -26,6 +28,7 @@ $(function () {
     });
 
     $("#w-node-ff05e759-9986-1567-b119-a92609867deb-4360c73e .ui-widget-content").slider({
+         value :"60",
         range: "min",
         min: 1,
         max: 100,
@@ -36,6 +39,7 @@ $(function () {
     });
 
     $("#w-node-_0175c10d-b0b6-597e-04e5-d065d3ca367f-4360c73e .ui-widget-content").slider({
+         value :"10",
         range: "min",
         min: 1,
         max: 50,
@@ -175,14 +179,19 @@ $(document).ready(function () {
                 var allInputsEntered = checkInputsEntered();
 
                 if (allInputsEntered) {
-                    $("#savings").text(
-                        "$" +
-                        cumulativeCashFlow
-                        .toFixed(0)
-                        .toLocaleString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-                    );
-                    $("#roi").text(ROI.toFixed(0) + "%");
+                    if (cumulativeCashFlow < 0) {
+                       alert("This scenario does not lead to any savings within one year");
+                        $("#roi").text("0%");
+                    } else {
+                        $("#savings").text(
+                            "$" +
+                            cumulativeCashFlow
+                                .toFixed(0)
+                                .toLocaleString()
+                                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                        );
+                        $("#roi").text(ROI.toFixed(0) + "%");
+                    }
 
                 } else {
                     $("#savings").text("$0");
