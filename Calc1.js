@@ -11,7 +11,7 @@ $(function () {
         min: 1,
         max: 30,
        
-        slide: function (event, ui) {
+        change: function (event, ui) {
             $("#days").text(ui.value);
             calculateCostAndSubscription();
         },
