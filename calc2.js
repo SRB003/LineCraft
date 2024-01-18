@@ -59,7 +59,7 @@ $(document).ready(function () {
       if (value < 1000000 || value > 500000000) {
           // If the entered value is outside the range, show a message and set it to the nearest limit
           alert("Please enter a value between $1000000 - $500000000 for the number of machines.");
-          value = Math.min(Math.max(value, 1000000 ),  500000000);
+        //  value = Math.min(Math.max(value, 1000000 ),  500000000);
           $(this).val(value);
       }
       calculateCostAndSubscription();
