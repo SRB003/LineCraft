@@ -64,7 +64,7 @@ $(function () {
   }
     function calculateCostAndSubscription() {
       if (!estOEEInitialized) {
-        $("#profit").text("$0");
+        $("#profit").text("0");
         $("#roi-1").text("0%");
         return;
       }
