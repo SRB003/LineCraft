@@ -17,6 +17,7 @@ $(function () {
     });
   
     $("#growth .ui-widget-content").slider({
+      value:"10",
       range: "min",
       min: 0,
       max: 100,
@@ -147,7 +148,7 @@ $(function () {
                 $("#alert2").text(
                 "This scenario does not lead to any savings within one year"
               );
-           // alert("This scenario does not lead to any savings within one year");
+          
              $("#roi-1").text("0%");
              $("#target-roi").text("0%");
 
