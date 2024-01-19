@@ -99,7 +99,7 @@ $(function () {
 
     function calculateCostAndSubscription() {
         if (!estOEEInitialized) {
-            $("#savings").text("$0");
+            $("#savings").text("0");
             $("#roi").text("0%");
             return;
         }
@@ -181,7 +181,10 @@ $(function () {
 
                 if (allInputsEntered) {
                     if (cumulativeCashFlow < 0) {
-                       alert("This scenario does not lead to any savings within one year");
+                         $("#alert").text(
+                "This scenario does not lead to any savings within one year"
+              );
+                      // alert("This scenario does not lead to any savings within one year");
                         $("#roi").text("0%");
                     } else {
                         $("#savings").text(
