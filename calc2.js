@@ -120,7 +120,7 @@ $(function () {
             var allInputsEntered = checkInputsEntered();
             if (allInputsEntered) {
                 
-                $("#breakeven2").text(breakevenDays +" "+ "days");
+                $("#breakeven2").text(breakevenDays);
 
             } else {
                 $("#breakeven2").text("0");
@@ -150,7 +150,7 @@ $(function () {
 
          } else {
           $("#profit").text(
-            "$" +
+            
               AdditionalTurnOver.toFixed(0)
                 .toLocaleString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
