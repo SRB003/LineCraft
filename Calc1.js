@@ -160,7 +160,7 @@ $(function () {
                 var allInputsEntered = checkInputsEntered();
                 if (allInputsEntered) {
                     
-                    $("#breakeven").text(breakevenDays +" "+ "Days");
+                    $("#breakeven").text(breakevenDays);
 
                 } else {
                     $("#breakeven").text("0");
@@ -185,13 +185,13 @@ $(function () {
                         $("#roi").text("0%");
                     } else {
                         $("#savings").text(
-                            "$" +
+
                             cumulativeCashFlow
                                 .toFixed(0)
                                 .toLocaleString()
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                         );
-                        $("#roi").text(ROI.toFixed(0) + "%");
+                        $("#roi").text(ROI.toFixed(0) );
                     }
 
                 } else {
