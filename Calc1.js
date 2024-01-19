@@ -198,7 +198,7 @@ $(function () {
                     }
 
                 } else {
-                    $("#savings").text("$0");
+                    $("#savings").text("0");
                     $("#roi").text("0%");
 
                 }
