@@ -53,18 +53,7 @@ $(function () {
         calculateCostAndSubscription();
     });
 });
-$(document).ready(function () {
-  $("#turnover").on("input", function () {
-      var value = $(this).val();
-      if (value < 0 || value > 500000000) {
-          // If the entered value is outside the range, show a message and set it to the nearest limit
-          alert("Please enter a value between $1000000 - $500000000 for the number of machines.");
-        //  value = Math.min(Math.max(value, 1000000 ),  500000000);
-          $(this).val(value);
-      }
-      calculateCostAndSubscription();
-  });
-});
+
     function calculateBreakevenDays(month, cumulativeCashFlow, previousCumulativeCashFlow) {
       if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
           // Corrected breakeven day calculation
