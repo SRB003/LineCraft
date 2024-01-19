@@ -144,7 +144,10 @@ $(function () {
           cumulativeCashFlow ;
           var AdditionalTurnOver = cumulativeCashFlow;
           if (AdditionalTurnOver < 0) {
-            alert("This scenario does not lead to any savings within one year");
+                $("#alert2").text(
+                "This scenario does not lead to any savings within one year"
+              );
+           // alert("This scenario does not lead to any savings within one year");
              $("#roi-1").text("0%");
              $("#target-roi").text("0%");
 
