@@ -190,7 +190,19 @@ $(function () {
 
             var breakevenDays = calculateBreakevenDays(month, cumulativeCashFlow, previousCumulativeCashFlow);
            
+if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
+                // Corrected breakeven day calculation
+                console.log("Breakeven Days (Month " + month + "): " + breakevenDays);
+                var allInputsEntered = checkInputsEntered();
+                if (allInputsEntered) {
+                    
+                    $("#breakeven").text(breakevenDays);
 
+                } else {
+                    $("#breakeven").text("0");
+                             }
+            } 
+                    }
            
            
 
@@ -212,6 +224,7 @@ $(function () {
               );
                       // alert("This scenario does not lead to any savings within one year");
                         $("#roi").text("0%");
+                        $("#breakeven").text("0");
                     } else {
                         $("#savings").text(
 
@@ -221,19 +234,7 @@ $(function () {
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                         );
                         $("#roi").text(ROI.toFixed(0) );
-                         if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
-                // Corrected breakeven day calculation
-                console.log("Breakeven Days (Month " + month + "): " + breakevenDays);
-                var allInputsEntered = checkInputsEntered();
-                if (allInputsEntered) {
-                    
-                    $("#breakeven").text(breakevenDays);
-
-                } else {
-                    $("#breakeven").text("0");
-                             }
-            } 
-                    }
+                         
 
                 } else {
                     $("#savings").text("0");
