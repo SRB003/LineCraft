@@ -182,7 +182,7 @@ $("#turnover").val("20000000");
 
          } else {
           $("#profit").text(
-            +
+           
               AdditionalTurnOver.toFixed(0)
                 .toLocaleString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
