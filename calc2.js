@@ -176,7 +176,7 @@ $("#turnover").val("20000000");
           cumulativeCashFlow ;
           var AdditionalTurnOver = cumulativeCashFlow;
           if (AdditionalTurnOver < 0) {
-            $("alert2").text("This scenario does not lead to any savings within one year");
+            $("#alert2").text("This scenario does not lead to any savings within one year");
              $("#roi-1").text("0%");
              $("#target-roi").text("0%");
 
