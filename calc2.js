@@ -56,7 +56,7 @@ $(function () {
         growth.slider("value",10);
 
         $("#assets").val("50");
-        $("#turnover").val("20000000");
+        $("#turnover").val("25000000");
       location.reload();
   });
 
