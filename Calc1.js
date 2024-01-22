@@ -202,7 +202,7 @@ if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
                     $("#breakeven").text("0");
                              }
             } 
-                    }
+                    
            
            
 
@@ -235,7 +235,7 @@ if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
                         );
                         $("#roi").text(ROI.toFixed(0) );
                          
-
+                    }
                 } else {
                     $("#savings").text("0");
                     $("#roi").text("0%");
