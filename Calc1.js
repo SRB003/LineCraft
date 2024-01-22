@@ -65,10 +65,10 @@ $(function () {
       
        
         calculateCostAndSubscription();
-        daysSlider.slider("option", "disabled", true);
-        hrsSlider.slider("option", "disabled", true);
-        OeeSlider.slider("option", "disabled", true);
-        estOeeSlider.slider("option", "disabled", true);
+        daysSlider.slider("option", "disabled", false);
+        hrsSlider.slider("option", "disabled", false);
+        OeeSlider.slider("option", "disabled", false);
+        estOeeSlider.slider("option", "disabled",false);
     });
 
    $("#refresh").on("click", function () {
