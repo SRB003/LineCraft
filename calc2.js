@@ -85,7 +85,7 @@ $(document).ready(function () {
   });
 });
 $("#assets").val("50");
-$("#turnover").val("20000000");
+$("#turnover").val("25000000");
     function calculateBreakevenDays(month, cumulativeCashFlow, previousCumulativeCashFlow) {
       if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
           // Corrected breakeven day calculation
