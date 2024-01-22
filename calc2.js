@@ -57,7 +57,7 @@ $(function () {
 
         $("#assets").val("50");
         $("#turnover").val("20000000");
-      
+      location.reload();
   });
 
   $(document).ready(function () {
