@@ -6,7 +6,7 @@ $(function () {
 
   
     $("#v-cost .ui-widget-content").slider({
-      value:"55",
+
       range: "min",
       min: 0,
       max: 100,
@@ -17,7 +17,7 @@ $(function () {
     });
   
     $("#growth .ui-widget-content").slider({
-      value:"10",
+
       range: "min",
       min: 0,
       max: 100,
