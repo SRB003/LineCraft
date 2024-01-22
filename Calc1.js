@@ -105,7 +105,7 @@ $(function () {
         $("#machines").on("input", function () {
             var value = $(this).val();
             if (value < 1 || value > 1000) {
-                // If the entered value is outside the range, show a message and set it to the nearest limit
+               
                 alert("Please enter a value between 1 - 1000 for the number of machines.");
                 value = Math.min(Math.max(value, 1), 1000);
                 $(this).val(value);
@@ -117,7 +117,7 @@ $(function () {
         $("#machine-cost").on("input", function () {
             var value = $(this).val();
             if (value < 1 || value > 5000) {
-                // If the entered value is outside the range, show a message and set it to the nearest limit
+               
                 alert("Please enter a value between $1 - $5000 for the number of machines.");
                 value = Math.min(Math.max(value, 1), 5000);
                 $(this).val(value);
@@ -191,18 +191,7 @@ $(function () {
             var breakevenDays = calculateBreakevenDays(month, cumulativeCashFlow, previousCumulativeCashFlow);
            
 
-            if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
-                // Corrected breakeven day calculation
-                console.log("Breakeven Days (Month " + month + "): " + breakevenDays);
-                var allInputsEntered = checkInputsEntered();
-                if (allInputsEntered) {
-                    
-                    $("#breakeven").text(breakevenDays);
-
-                } else {
-                    $("#breakeven").text("0");
-                             }
-            } 
+           
            
 
             if (month === 12) {
@@ -232,11 +221,24 @@ $(function () {
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                         );
                         $("#roi").text(ROI.toFixed(0) );
+                         if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
+                // Corrected breakeven day calculation
+                console.log("Breakeven Days (Month " + month + "): " + breakevenDays);
+                var allInputsEntered = checkInputsEntered();
+                if (allInputsEntered) {
+                    
+                    $("#breakeven").text(breakevenDays);
+
+                } else {
+                    $("#breakeven").text("0");
+                             }
+            } 
                     }
 
                 } else {
                     $("#savings").text("0");
                     $("#roi").text("0%");
+                     $("#breakeven").text("0");
 
                 }
                 daysSlider.slider("option", "disabled", false);
