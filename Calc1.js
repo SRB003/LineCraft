@@ -98,7 +98,7 @@ $(function () {
         $("#machines").val("10");
         $("#machine-cost").val("100");
 
-       
+        location.reload();
         calculateCostAndSubscription();
     });
     $(document).ready(function () {
