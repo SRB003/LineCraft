@@ -239,7 +239,7 @@ if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
                 } else {
                     $("#savings").text("0");
                     $("#roi").text("0%");
-                     $("#breakeven").text("0");
+                     
 
                 }
                 daysSlider.slider("option", "disabled", false);
