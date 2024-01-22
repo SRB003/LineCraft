@@ -96,7 +96,7 @@ $("#turnover").val("20000000");
   }
     function calculateCostAndSubscription() {
       if (!estOEEInitialized) {
-        $("#profit").text("$0");
+        $("#profit").text("0");
         $("#roi-1").text("0%");
         return;
       }
@@ -152,7 +152,7 @@ $("#turnover").val("20000000");
             var allInputsEntered = checkInputsEntered();
             if (allInputsEntered) {
                 
-                $("#breakeven2").text(breakevenDays +" "+ "days");
+                $("#breakeven2").text(breakevenDays);
 
             } else {
                 $("#breakeven2").text("0");
@@ -193,7 +193,7 @@ $("#turnover").val("20000000");
 
           
         } else {
-          $("#profit").text("$0");
+          $("#profit").text("0");
           $("#roi-1").text("0%");
           $("#target-roi").text("0%");
         }
