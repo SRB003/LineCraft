@@ -5,13 +5,18 @@ $(function () {
     var estOEEInitialized = false;
     var previousMonthcost = 0;
 
+     var daysSlider = $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content");
+    var hrsSlider = $("#w-node-_09480e99-58d2-0fb9-83f3-76b815703657-4360c73e .ui-widget-content");
+    var OeeSlider = $("#w-node-ff05e759-9986-1567-b119-a92609867deb-4360c73e .ui-widget-content");
+    var estOeeSlider = $("#w-node-_0175c10d-b0b6-597e-04e5-d065d3ca367f-4360c73e .ui-widget-content");
+
     $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content").slider({
         value :"25",
         range: "min",
         min: 1,
         max: 30,
        
-        change: function (event, ui) {
+        change: function (event, ui) {    
             $("#days").text(ui.value);
             calculateCostAndSubscription();
         },
@@ -55,14 +60,44 @@ $(function () {
 
      
         estOEEInitialized = true;
+      
+       
+        calculateCostAndSubscription();
+        daysSlider.slider("option", "disabled", true);
+        hrsSlider.slider("option", "disabled", true);
+        OeeSlider.slider("option", "disabled", true);
+        estOeeSlider.slider("option", "disabled", true);
+    });
+
+   $("#refresh").on("click", function () {
+        
+        cumulativeCashFlow = 0;
+        previousMonthOEE = undefined;
+        estOEEInitialized = false;
+
+      
+        $("#savings").text("0");
+        $("#roi").text("0%");
+        $("#breakeven").text("0");
+        
+       
+        daysSlider.slider("option", "disabled", false);
+        hrsSlider.slider("option", "disabled", false);
+        OeeSlider.slider("option", "disabled", false);
+        estOeeSlider.slider("option", "disabled", false);
+
+       
+        daysSlider.slider("value", 25);
+        hrsSlider.slider("value", 16);
+        OeeSlider.slider("value", 60);
+        estOeeSlider.slider("value", 10);
+
+    
+        $("#machines").val("10");
+        $("#machine-cost").val("100");
 
        
         calculateCostAndSubscription();
-    });
-
-    $("#refresh").on("click", function () {
-      
-        location.reload();
     });
     $(document).ready(function () {
         $("#machines").on("input", function () {
@@ -202,6 +237,10 @@ $(function () {
                     $("#roi").text("0%");
 
                 }
+                daysSlider.slider("option", "disabled", false);
+                hrsSlider.slider("option", "disabled", false);
+                OeeSlider.slider("option", "disabled", false);
+                estOeeSlider.slider("option", "disabled", false);
             }
 
             previousMonthOEE = oeePercentage;
