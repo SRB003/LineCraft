@@ -37,8 +37,8 @@ $(function () {
 
       
       calculateCostAndSubscription();
-      Vcost.slider("option", "disabled", true);
-      growth.slider("option", "disabled", true);
+      Vcost.slider("option", "disabled", false);
+      growth.slider("option", "disabled",false);
   });
 
   $("#refresh2").on("click", function () {
