@@ -55,9 +55,10 @@ $(function () {
             calculateCostAndSubscription();
         },
     });
-    calculateCostAndSubscription();
+   
      $("#machines").val("50");
     $("#machine-cost").val("100");
+    calculateCostAndSubscription();
  /*   $("#submit").on("click", function (event) {
         event.preventDefault();
 
