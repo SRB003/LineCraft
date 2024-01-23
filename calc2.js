@@ -1,7 +1,7 @@
 $(function () {
     var annualDiscountRate = 5.5;
     var cumulativeCashFlow = 0;
-    var estOEEInitialized = false;
+ //   var estOEEInitialized = false;
     var curentoee = 0.7;
     var Vcost = $("#v-cost .ui-widget-content");
     var growth = $("#growth .ui-widget-content");
@@ -29,7 +29,10 @@ $(function () {
         calculateCostAndSubscription();
       },
     });
-    $("#submit2").on("click", function (event) {
+    $("#assets").val("50");
+$("#turnover").val("25000000");
+       calculateCostAndSubscription();
+/*    $("#submit2").on("click", function (event) {
       event.preventDefault();
 
       
@@ -58,7 +61,7 @@ $(function () {
         $("#assets").val("50");
         $("#turnover").val("25000000");
       location.reload();
-  });
+  });*/
 
   $(document).ready(function () {
     $("#assets").on("input", function () {
@@ -84,8 +87,7 @@ $(document).ready(function () {
       calculateCostAndSubscription();
   });
 });
-$("#assets").val("50");
-$("#turnover").val("25000000");
+
     function calculateBreakevenDays(month, cumulativeCashFlow, previousCumulativeCashFlow) {
       if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
           // Corrected breakeven day calculation
@@ -176,7 +178,8 @@ $("#turnover").val("25000000");
           cumulativeCashFlow ;
           var AdditionalTurnOver = cumulativeCashFlow;
           if (AdditionalTurnOver < 0) {
-            $("#alert2").text("This scenario does not lead to any savings within one year");
+           // $("#alert2").text("This scenario does not lead to any savings within one year");
+              alert("This scenario does not lead to any savings within one year")
              $("#roi-1").text("0%");
              $("#target-roi").text("0%");
 
