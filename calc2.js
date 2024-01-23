@@ -97,11 +97,11 @@ $(document).ready(function () {
       }
   }
     function calculateCostAndSubscription() {
-      if (!estOEEInitialized) {
+     /* if (!estOEEInitialized) {
         $("#profit").text("0");
         $("#roi-1").text("0%");
         return;
-      }
+      }*/
       var numberOfMachines = parseInt($("#assets").val(), 10);
       var TurnOver = parseInt($("#turnover").val());
      
