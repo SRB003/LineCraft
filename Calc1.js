@@ -222,10 +222,10 @@ if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
 
                 if (allInputsEntered) {
                     if (cumulativeCashFlow < 0) {
-                         $("#alert").text(
-                "This scenario does not lead to any savings within one year"
+                 //        $("#alert").text(
+               // "This scenario does not lead to any savings within one year"
               );
-                      // alert("This scenario does not lead to any savings within one year");
+                      alert("This scenario does not lead to any savings within one year");
                         $("#roi").text("0%");
                         $("#breakeven").text("0");
                     } else {
