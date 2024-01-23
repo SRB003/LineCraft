@@ -2,13 +2,13 @@ $(function () {
     var annualDiscountRate = 5.5;
     var cumulativeCashFlow = 0;
     var previousMonthOEE;
-    var estOEEInitialized = false;
+  //  var estOEEInitialized = false;
     var previousMonthcost = 0;
 
-     var daysSlider = $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content");
+   /*  var daysSlider = $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content");
     var hrsSlider = $("#w-node-_09480e99-58d2-0fb9-83f3-76b815703657-4360c73e .ui-widget-content");
     var OeeSlider = $("#w-node-ff05e759-9986-1567-b119-a92609867deb-4360c73e .ui-widget-content");
-    var estOeeSlider = $("#w-node-_0175c10d-b0b6-597e-04e5-d065d3ca367f-4360c73e .ui-widget-content");
+    var estOeeSlider = $("#w-node-_0175c10d-b0b6-597e-04e5-d065d3ca367f-4360c73e .ui-widget-content");*/
 
     $("#w-node-_9fa2d9ba-0894-b419-ff8f-e31a3953546b-4360c73e .ui-widget-content").slider({
         value :"25",
@@ -55,9 +55,10 @@ $(function () {
             calculateCostAndSubscription();
         },
     });
+    calculateCostAndSubscription();
      $("#machines").val("50");
     $("#machine-cost").val("100");
-    $("#submit").on("click", function (event) {
+ /*   $("#submit").on("click", function (event) {
         event.preventDefault();
 
      
@@ -100,7 +101,8 @@ $(function () {
 
         location.reload();
         calculateCostAndSubscription();
-    });
+    });*/
+    
     $(document).ready(function () {
         $("#machines").on("input", function () {
             var value = $(this).val();
@@ -135,11 +137,11 @@ $(function () {
     }
 
     function calculateCostAndSubscription() {
-        if (!estOEEInitialized) {
+     /*   if (!estOEEInitialized) {
             $("#savings").text("0");
             $("#roi").text("0%");
             return;
-        }
+        }*/
 
         var numberOfMachines = parseInt($("#machines").val(), 10);
         var oneTimeCost = Math.ceil(numberOfMachines / 20) * 50000;
@@ -239,13 +241,14 @@ if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
                 } else {
                     $("#savings").text("0");
                     $("#roi").text("0%");
+                    
                      
 
                 }
-                daysSlider.slider("option", "disabled", false);
+             /*   daysSlider.slider("option", "disabled", false);
                 hrsSlider.slider("option", "disabled", false);
                 OeeSlider.slider("option", "disabled", false);
-                estOeeSlider.slider("option", "disabled", false);
+                estOeeSlider.slider("option", "disabled", false);*/
             }
 
             previousMonthOEE = oeePercentage;
