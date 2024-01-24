@@ -219,10 +219,14 @@ if (cumulativeCashFlow > 0 && previousCumulativeCashFlow < 0) {
 
                 var ROI = (cumulativeCashFlow / (oneTimeCost + yearlySubscription)) * 100;
                 var allInputsEntered = checkInputsEntered();
-
+                 $("#popup1").hide();
                 if (allInputsEntered) {
                     if (cumulativeCashFlow < 0) {
-                  $("#alert4").text("This scenario does not lead to any savings within one year");
+                        $("#popup1").show();
+                        $("#popup1 .submit-btn").on("click", function() {       
+        $("#popup1").hide();
+    });
+                //  $("#alert4").text("This scenario does not lead to any savings within one year");
                      // alert("This scenario does not lead to any savings within one year");
                         $("#roi").text("0%");
                         $("#breakeven").text("0");
